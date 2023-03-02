@@ -185,10 +185,12 @@ const Products = (props) => {
       return { name, country, cost, instock };
     });
     setItems([...items, ...newItems]);
+    setCart([...cart]);
+    setTotal([...total]);
   };
 
   return (
-    <Container>
+    <Container className="bg-warning" style={{border: '2px solid yellow', borderRadius: '5%'}}>
       <Row>
         <Col>
           <h1>Product List</h1>
@@ -205,19 +207,19 @@ const Products = (props) => {
         </Col>
       </Row>
       <Row>
-        <form
+        <form 
           onSubmit={(event) => {
             restockProducts(`http://localhost:1337/api/${query}`);
             console.log(`Restock called on ${query}`);
             event.preventDefault();
           }}
         >
-          <input
+          <input 
             type="text"
             value={query}
             onChange={(event) => setQuery(event.target.value)}
           />
-          <button type="submit">ReStock Products</button>
+          <button className="bg-success" type="submit">ReStock Products</button>
         </form>
       </Row>
     </Container>

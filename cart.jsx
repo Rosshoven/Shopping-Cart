@@ -190,7 +190,7 @@ const Products = (props) => {
   };
 
   return (
-    <Container className="bg-warning" style={{border: '2px solid yellow', borderRadius: '5%'}}>
+    <Container className="bg-warning" style={{border: '2px solid yellow', borderRadius: '1%'}}>
       <Row>
         <Col>
           <h1>Product List</h1>
